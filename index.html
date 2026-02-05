@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>UCSD Food Web — Where do I start?</title>
+  <style>
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial; margin:0; background:#f6f7f8; color:#111;}
+    .wrap{max-width:900px; margin:0 auto; padding:26px 16px 60px;}
+    .card{background:#fff; border-radius:16px; padding:18px; box-shadow:0 10px 26px rgba(0,0,0,.07); margin:14px 0;}
+    h1{margin:0 0 8px; font-size:26px;}
+    h2{margin:0 0 8px; font-size:18px;}
+    p{margin:10px 0; line-height:1.55;}
+    .muted{color:#555; font-size:14px;}
+    .grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:10px;}
+    button{padding:12px 14px; border-radius:14px; border:0; background:#111; color:#fff; cursor:pointer; font-size:16px;}
+    a{color:#111;}
+    .btnlink{display:inline-block; padding:10px 12px; border-radius:12px; background:#111; color:#fff; text-decoration:none; margin-top:10px;}
+    ul{margin:8px 0 0 18px;}
+    .pill{display:inline-block; font-size:12px; padding:3px 9px; border-radius:999px; background:#eee; margin-right:6px;}
+    .section{display:none;}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <h1>UCSD Food Web — Where do I start?</h1>
+      <p class="muted">A student-built quick guide that turns existing UCSD resources into a simple decision path. Links point to official UCSD Basic Needs pages.</p>
+      <div class="muted">
+        <span class="pill">Fast</span><span class="pill">Low friction</span><span class="pill">Official links</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <p><strong>Pick what’s closest:</strong></p>
+      <div class="grid">
+        <button onclick="show('today')">I need food today</button>
+        <button onclick="show('week')">I may run out this week</button>
+        <button onclick="show('long')">Food stress is long-term</button>
+      </div>
+      <a class="btnlink" href="https://basicneeds.ucsd.edu" target="_blank" rel="noopener">Open UCSD Basic Needs (official)</a>
+    </div>
+
+    <div id="today" class="card section">
+      <h2>I need food today</h2>
+      <ul>
+        <li><strong>Triton Food Pantry</strong> — check today’s hours/locations and what to bring.</li>
+        <li><strong>iTable</strong> — emergency support/guidance for international students.</li>
+        <li><strong>Campus “free food”</strong> — clubs/events sometimes post same-day food.</li>
+      </ul>
+      <p class="muted"><strong>Common hesitation:</strong> “I’m not sure I qualify.” Don’t self-reject—start with Pantry guidance first, then follow official eligibility steps.</p>
+    </div>
+
+    <div id="week" class="card section">
+      <h2>I may run out this week</h2>
+      <ul>
+        <li><strong>Triton Food Pantry (recurring support)</strong> — schedule + access guide.</li>
+        <li><strong>Basic Needs Hub</strong> — overview of food pathways.</li>
+      </ul>
+      <p class="muted"><strong>First move:</strong> Pick one option you can do within 24 hours (usually Pantry). Action beats perfect planning.</p>
+    </div>
+
+    <div id="long" class="card section">
+      <h2>Food stress is long-term</h2>
+      <ul>
+        <li><strong>CalFresh support</strong> — eligibility + application assistance.</li>
+        <li><strong>Basic Needs Emergency Grant</strong> — short-term relief when eligible.</li>
+      </ul>
+      <p class="muted"><strong>Common hesitation:</strong> “I don’t know if I’m eligible.” Treat that as a question for the office, not a reason to stop.</p>
+    </div>
+
+    <div class="card">
+      <h2>FAQ</h2>
+      <p><strong>Will using food support affect my financial aid / record?</strong><br>
+      I don’t interpret policy here. Please follow official UCSD Basic Needs guidance and contact them directly if you’re unsure.</p>
+
+      <p><strong>I feel awkward using these resources.</strong><br>
+      That feeling is common. Food access is a campus reality, and these services exist because students need them.</p>
+
+      <p class="muted">Policies and hours may change. Always confirm via official pages.</p>
+    </div>
+
+    <div class="card">
+      <h2>Feedback</h2>
+      <p class="muted">Add your anonymous feedback (paste your Google Form link here).</p>
+    </div>
+
+    <div class="card">
+      <h2>About</h2>
+      <p class="muted">This page is part of Food Web, a student-led initiative informed by observations of how students navigate (or avoid) existing food resources, aiming to reduce confusion, stigma, and “perceived ineligibility” barriers.</p>
+    </div>
+  </div>
+
+  <script>
+    function show(id){
+      document.querySelectorAll('.section').forEach(el => el.style.display = 'none');
+      document.getElementById(id).style.display = 'block';
+      window.scrollTo({top: 0, behavior: "smooth"});
+    }
+  </script>
+</body>
+</html>
